@@ -42,7 +42,7 @@ class UnorderedVector:
             # last_pos = 0
             self.values[self.last_pos] = value
             # from values[] to values[value]
-            
+
     # O(n) - linear
     def search(self, value):
         """Search value in vector
@@ -52,8 +52,30 @@ class UnorderedVector:
         """
         for i in range(self.last_pos + 1):
             if value == self.values[i]:
-                return print(f"Position: {i} - Value: {self.values[i]}")
-        return print(f"Not found")
+                print(f"Position: {i} - Value: {self.values[i]}")
+                return self.values[i]
+        print(f"Not found")
+        return -1
+
+    def delete(self, value):
+        """Delete a value
+
+        Args:
+            value (int): value selected to delete
+        """
+        print("\n# 1 - search value")
+        pos = self.search(value)
+        print("\n# 2 - check if value exists")
+        if pos == -1:
+            print("\nValue not found.")
+            return -1
+        else:
+            print("# 3 - reorganize the list of values")
+            for i in range(pos, self.last_pos):
+                print(i, self.values[i], self.values[i + 1])
+                self.values[i] = self.values[i + 1]
+            print("\n#Update")
+            self.last_pos -= 1
 
 
 if __name__ == "__main__":
@@ -66,7 +88,7 @@ if __name__ == "__main__":
     print("\n# 2 - insert")
     vector.insert(1)
     vector.print_values()
-    
+
     # 3 insert
     print("\n# 3 - insert")
     vector.insert(2)
@@ -74,20 +96,27 @@ if __name__ == "__main__":
     vector.insert(4)
     vector.insert(5)
     vector.print_values()
-    
+
     # 4 values
     print("\n# 4 values")
     print(vector.values)
-    
+
     # 5 Vector is Full
     print("\n# 5 Vector is Full")
     vector.insert(6)
-    
+
     # 6 Search value
     print("\n# 6 Search value")
     vector.search(4)
-    
+
     # 7 Search value that doesn't in the vector
     print("\n# 7 Search value that doesn't in the vector")
     vector.search(7)
-    
+
+    # 8 Delete a value from vector
+    print("\n# 8 Delete a value from vector")
+    vector.print_values()
+
+    print()
+    vector.delete(3)
+    vector.print_values()
