@@ -50,7 +50,8 @@ class UnorderedVector:
         for i in range(self.last_pos + 1):
             if value == self.values[i]:
                 print(f"Position: {i} - Value: {self.values[i]}")
-                return self.values[i]
+                # return position of value
+                return i
         print(f"Not found")
         return -1
 
@@ -69,7 +70,6 @@ class UnorderedVector:
         else:
             print("# 3 - reorganize the list of values")
             for i in range(pos, self.last_pos):
-                print(i, self.values[i], self.values[i + 1])
                 self.values[i] = self.values[i + 1]
             print("\n#Update")
             self.last_pos -= 1
