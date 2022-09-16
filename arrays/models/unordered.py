@@ -24,7 +24,7 @@ class UnordArray:
 				return i
 
 		print("\nNot found")
-		return None
+		return 
 
 	def delete(self, value):
 		index = self.search(value)

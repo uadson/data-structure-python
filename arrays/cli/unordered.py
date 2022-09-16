@@ -35,9 +35,12 @@ def unord():
 			for num in num_input():
 				arr.insert(num)
 		
-		#if select == 4:
-		#	arr.clean()
-		#	arr.len_arr = int(input('\nType the length of array: '))
+		if select == 4:
+			value = int(input('Type a value: '))
+			arr.search(value)
+		
+		if select == 5:
+			pass
 
-		#if select == 5:
-		#	break
+		if select == 6:
+			break

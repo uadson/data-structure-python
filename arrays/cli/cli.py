@@ -9,6 +9,7 @@ def main():
 	}
 
 	while True:
+		print("\n Ordered or Unorderd Array")
 		for key, value in menu.items():
 			print(f"{key} - {value}")
 
