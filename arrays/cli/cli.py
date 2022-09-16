@@ -9,7 +9,7 @@ def main():
 	}
 
 	while True:
-		print("\n Ordered or Unorderd Array")
+		print("\n Ordered or Unorderd Array\n")
 		for key, value in menu.items():
 			print(f"{key} - {value}")
 
@@ -21,5 +21,9 @@ def main():
 		if select == 2:
 			unord()
 
-		if select == 3:
+		try:
+			if select == 3:
+				break
+		except KeyboardInterrupt:
+			python("\nProgram closed")
 			break

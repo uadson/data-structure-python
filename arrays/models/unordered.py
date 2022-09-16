@@ -28,10 +28,7 @@ class UnordArray:
 
 	def delete(self, value):
 		index = self.search(value)
-		if index is None:
-			print("\nNot found")
-			return None
-		else:
-			for i in range(index, len(self.arr)):
-				self.arr[i] = self.arr[i + 1]
+
+		for i in range(index, len(self.arr)):
+			self.arr[i] = self.arr[i + 1]
 				

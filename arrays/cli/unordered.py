@@ -40,7 +40,8 @@ def unord():
 			arr.search(value)
 		
 		if select == 5:
-			pass
+			value = int(input("Type a value: "))
+			arr.delete(value)
 
 		if select == 6:
 			break
